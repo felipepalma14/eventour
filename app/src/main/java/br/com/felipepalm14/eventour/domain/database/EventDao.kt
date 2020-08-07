@@ -1,6 +1,5 @@
 package br.com.felipepalm14.eventour.domain.database
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -11,10 +10,10 @@ import br.com.felipepalm14.eventour.domain.database.model.Event
 interface EventDao {
 
     @Query("SELECT * FROM event")
-    fun getAllEvents() : LiveData<List<Event>>
+    fun getAllEvents() : MutableList<Event>
 
     @Query("SELECT * FROM event WHERE id = :id")
-    fun getEvent(id: Int): LiveData<Event>
+    fun getEvent(id: Long): Event
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(events: List<Event>)

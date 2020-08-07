@@ -1,5 +1,6 @@
 package br.com.felipepalm14.eventour.di.app.main
 
+import br.com.felipepalm14.eventour.ui.event.EventDetailFragment
 import br.com.felipepalm14.eventour.ui.event.EventListFragment
 import br.org.geledes.juntas.di.app.scope.FragmentScoped
 import dagger.Module
@@ -10,5 +11,10 @@ abstract class FragmentMainBindingModule {
     @FragmentScoped
     @ContributesAndroidInjector
     internal abstract fun bindEventListFragment(): EventListFragment
+
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    internal abstract fun bindEventDetailFragment(): EventDetailFragment
 
 }

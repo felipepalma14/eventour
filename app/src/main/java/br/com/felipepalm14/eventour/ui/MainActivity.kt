@@ -24,6 +24,5 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         val navController = findNavController(R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         toolbar.setupWithNavController(navController, appBarConfiguration)
-
     }
 }

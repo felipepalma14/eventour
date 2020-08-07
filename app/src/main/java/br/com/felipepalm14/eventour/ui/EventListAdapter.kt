@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.felipepalm14.eventour.databinding.ItemEventBinding
 import br.com.felipepalm14.eventour.domain.database.model.Event
 
-class EventListAdapter(private val clickListener: OnClickListener? = null) : ListAdapter<Event,
+class EventListAdapter(private val clickListener: OnClickListener) : ListAdapter<Event,
             RecyclerView.ViewHolder>(GridViewDiffCallback) {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -26,8 +26,9 @@ class EventListAdapter(private val clickListener: OnClickListener? = null) : Lis
     class MsgViewHolder constructor(val binding: ItemEventBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(clickListener: OnClickListener?, item: Event) {
+        fun bind(clickListener: OnClickListener, item: Event) {
             binding.event = item
+            binding.clickListener  = clickListener
             binding.executePendingBindings()
         }
     }
@@ -42,8 +43,8 @@ class EventListAdapter(private val clickListener: OnClickListener? = null) : Lis
         }
     }
 
-    class OnClickListener(val clickListener: (productId: Event) -> Unit) {
-        fun onClick(v: View, product: Event) = clickListener(product)
+    class OnClickListener(val clickListener: (item: Event) -> Unit) {
+        fun onClick(v: View, item: Event) = clickListener(item)
     }
 
 }

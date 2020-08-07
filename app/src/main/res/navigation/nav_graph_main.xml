@@ -8,6 +8,27 @@
     <fragment
         android:id="@+id/eventListFragment"
         android:name="br.com.felipepalm14.eventour.ui.event.EventListFragment"
-        android:label="EventListFragment"
-        tool:layout="@layout/fragment_event_list"/>
+        android:label="Eventos Disponíveis"
+        tool:layout="@layout/fragment_event_list">
+        <action
+            android:id="@+id/to_details"
+            app:destination="@id/eventDetailFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/eventListFragment"
+            app:popUpToInclusive="false"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="br.com.felipepalm14.eventour.ui.event.EventDetailFragment"
+        android:label="Detalhes do Evento"
+        tool:layout="@layout/fragment_event_detail" >
+
+        <argument
+            android:name="event"
+            app:argType="br.com.felipepalm14.eventour.domain.database.model.Event" />
+    </fragment>
 </navigation>

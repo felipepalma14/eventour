@@ -2,4 +2,13 @@
     <string name="app_name">Eventour</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_unknow_price">Valor não informado</string>
+    <string name="text_unknow_postdate">Data não informada</string>
+    <string name="text_checkin">Checkin</string>
+    <string name="text_dialog_checkin">Checkin</string>
+    <string name="text_dialog_cancel">Cancelar</string>
+    <string name="text_failed_checkin">Falha ao efetuar checkin</string>
+    <string name="text_success_checkin">Checkin efetuado com sucesso</string>
+    <string name="text_type_email">Informe um email válido</string>
+    <string name="text_type_value">Informe um valor válido</string>
 </resources>
