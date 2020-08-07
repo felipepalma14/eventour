@@ -61,9 +61,6 @@ class EventDetailFragment : BaseFragment<FragmentEventDetailBinding, MainViewMod
             Timber.d(event.title)
             binding.event = event
         })
-        viewModel.toast.observe(viewLifecycleOwner, Observer { msg ->
-            showSnackBar(msg)
-        })
     }
 
     @Suppress("DEPRECATION")
